@@ -1,5 +1,7 @@
 import { NextResponse } from 'next/server';
 
+export const maxDuration = 60;
+
 export async function POST(request: Request) {
   try {
     const { jsonString, targetLang } = await request.json();
@@ -27,7 +29,8 @@ export async function POST(request: Request) {
           contents: [{ parts: [{ text: `Translate all the values in this JSON to ${targetLang}. Keep the EXACT SAME keys and array structures. Only translate the text content and preserve the exact tone and emojis.\n\nJSON:\n${jsonString}` }] }],
           generationConfig: {
             temperature: 0.3,
-            maxOutputTokens: 1024
+            maxOutputTokens: 1024,
+            responseMimeType: "application/json"
           }
         })
       }
