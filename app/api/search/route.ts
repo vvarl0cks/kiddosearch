@@ -62,7 +62,8 @@ SAFETY: If the question contains anything inappropriate, return:
           },
           generationConfig: {
             temperature: 0.7,
-            maxOutputTokens: 1024
+            maxOutputTokens: 1024,
+            responseMimeType: "application/json"
           }
         })
       }
