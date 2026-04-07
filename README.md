@@ -17,6 +17,12 @@ KiddoSearch answers children's questions using Google's cutting-edge **Gemini 3*
 
 ---
 
+## 📈 Recent Updates
+
+- **Robust JSON Support:** Updated the API (`/api/search/route.ts`) to enforce strictly formatted JSON from Gemini using `responseMimeType: "application/json"`. This prevents random `SyntaxError: Unterminated string` errors when generating dynamic text or complex emojis in Production/Vercel.
+
+---
+
 ## 🛠️ Technology Stack
 
 - **Framework**: [Next.js 15 (App Router)](https://nextjs.org/)
